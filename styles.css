@@ -1,5 +1,58 @@
+/*libreria de colores*/
+:root {
+    --white: #f6f0e6;
+    --pastel_blue: #8fb3c8;
+    --blue: #0b3c5d;
+}
+
 body {
-    background-color: #adaddb;
+    background-color: var(--white);
+    color: var(--blue);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
+}
+
+header {
+    background-color: var(--blue);
+    color: var(--white);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+main {
+    margin: 10px;
+    text-align: center;
+}
+
+#producto {
+    background-color: var(--white);
+    color: var(--blue);
+    padding: 5px;
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#producto::placeholder {
+    color: var(--pastel_blue);
+}
+
+footer {
+    background-color: var(--blue);
+    color: var(--white);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/*funcion comprado*/
+.comprado {
+    text-decoration: line-through;
+}
+
+.oscuro {
+    background-color: var(--blue);
+    color: var(--white);
 }

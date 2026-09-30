@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="es">
-    
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,26 +10,36 @@
     </head>
 
     <body>
+        <header>
+            <h1 id="titulo">LISTA DE LA COMPRA</h1>
+        </header>
 
         <main>
-            <h1 id="titulo">Lista de la compra</h1>
-
             <section>
-                <h2>Añadir producto</h2>
-                <label>Producto</label>
-                <input>
-            </section>
+                <article>
+                    <h2>Añadir</h2>
+                    <!--for, relaciona label con input-->                    
+                    <!--<label for="producto">Producto</label>-->
+                    <!--placeholder, muestra ejemplo dentro del input-->
+                    <input 
+                        id="producto" 
+                        placeholder="Plátanos de Canarias"
+                    >
+                </article>
 
-            <section>
-                <h2>Productos</h2>
-                <p id="lista"></p>
+                <article>
+                    <h2>Productos</h2>
+                    <ul id="lista"></ul>
+                    <p id="cantidad">Cantidad de productos: 0</p>
+                </article>
             </section>
         </main>
 
         <footer>
+            <p>
+                <b>Misión 1. Programación web I, cliente.</b>
+            </p>
             <p>&copy; Valeria Arcila Rodríguez</p>
         </footer>
-
     </body>
-    
 </html>
