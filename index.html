@@ -4,40 +4,53 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Mision 1</title>
+        <title>Misión 1</title>
         <link rel="stylesheet" href="styles.css">
+        <!--defer, ejecuta tras parsear html-->
         <script src="app.js" defer></script>
     </head>
 
     <body>
         <header>
-            <h1 id="titulo">LISTA DE LA COMPRA</h1>
+            <h1>LISTA DE LA COMPRA</h1>
         </header>
 
         <main>
             <section>
-                <article>
-                    <h2>Añadir</h2>
-                    <!--for, relaciona label con input-->                    
-                    <!--<label for="producto">Producto</label>-->
+                <h2>Agregar</h2>
+                <form id="formulario" autocomplete="off">
+                    <!--for, relaciona label con input-->
+                    <label for="producto">Producto</label>
                     <!--placeholder, muestra ejemplo dentro del input-->
                     <input 
                         id="producto" 
+                        type="text"
                         placeholder="Plátanos de Canarias"
                     >
-                </article>
+                    <label for="cantidad">Cantidad</label>
+                    <input
+                        id="cantidad"
+                        type="number"
+                        min="1"
+                        value="1"
+                    >
+                    <!--submit, envia el formulario-->
+                    <button type="submit">Agregar</button>
+                </form>
+                <p id="error" role="alert"></p>
+            </section>
 
-                <article>
-                    <h2>Productos</h2>
-                    <ul id="lista"></ul>
-                    <p id="cantidad">Cantidad de productos: 0</p>
-                </article>
+            <section>
+                <h2>Productos</h2>
+                <ul id="lista"></ul>
+                <p id="contador">Sin productos</p>
+                <button id="vaciar" type="button">Vaciar</button>
             </section>
         </main>
 
         <footer>
             <p>
-                <b>Misión 1. Programación web I, cliente.</b>
+                <b>Programación web I, cliente</b>
             </p>
             <p>&copy; Valeria Arcila Rodríguez</p>
         </footer>

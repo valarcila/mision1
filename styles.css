@@ -1,17 +1,25 @@
 /*libreria de colores*/
 :root {
     --white: #f6f0e6;
+    --brown: #d4b896;
     --pastel_blue: #8fb3c8;
     --blue: #0b3c5d;
+}
+
+/*modo oscuro, invierte los colores*/
+body.oscuro {
+    --white: #0b3c5d;
+    --blue: #f6f0e6;
 }
 
 body {
     background-color: var(--white);
     color: var(--blue);
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
-header {
+header, footer {
     background-color: var(--blue);
     color: var(--white);
     margin: 10px;
@@ -25,34 +33,61 @@ main {
     text-align: center;
 }
 
-#producto {
+#formulario {
+    margin: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#producto, #cantidad {
     background-color: var(--white);
     color: var(--blue);
     padding: 5px;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--pastel_blue);
     border-radius: 10px;
     text-align: center;
 }
 
+/*::, pseudoelementos*/
 #producto::placeholder {
     color: var(--pastel_blue);
 }
 
-footer {
+/*:, pseudoclases*/
+#producto:focus, #cantidad:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+button {
     background-color: var(--blue);
     color: var(--white);
-    margin: 10px;
     padding: 10px;
+    border: none;
     border-radius: 10px;
     text-align: center;
+   
+}
+
+button:hover {
+    background-color: var(--pastel_blue);
+    color: var(--blue);
+}
+
+#error {
+
+}
+
+#lista {
+    list-style: none;
+    padding: 0px;
 }
 
 /*funcion comprado*/
 .comprado {
     text-decoration: line-through;
-}
-
-.oscuro {
-    background-color: var(--blue);
-    color: var(--white);
 }
