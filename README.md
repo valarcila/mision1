@@ -2,5 +2,9 @@
 
 ## Uso de ia
 
+ hacer el código mas optimo, que agregar producto no haga muchas cosas 
+
 ## Autopsia
-quitar required de producto e ingluir un error
+quitar required de producto e incluir error
+
+que sea cero 
