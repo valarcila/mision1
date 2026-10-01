@@ -3,9 +3,9 @@ const formulario = document.querySelector("#formulario")
 const producto = document.querySelector("#producto")
 const cantidad = document.querySelector("#cantidad")
 const error = document.querySelector("#error")
-const lista = document.querySelector("#lista")
+const tabla = document.querySelector("#tabla")
 const contador = document.querySelector("#contador")
-const vaciar = document.querySelector("#vaciar")
+const eliminar = document.querySelector("#eliminar")
 
 let productos = []
 
@@ -17,9 +17,9 @@ formulario.addEventListener("submit", event => {
 })
 
 function agregarProducto() {
+    const numero = Number(cantidad.value)
     // trim(), quita espacios  
     const nombre = producto.value.trim()
-    const numero = Number(cantidad.value)
 
     if(nombre === "") {        
         // textContent, cambia o lee texto de elemento html
@@ -30,19 +30,27 @@ function agregarProducto() {
     }
     error.textContent = ""
 
-    const item = crearProducto(nombre, numero)
-
-    // appendChild(), agrega elemento creado a otro html
-    lista.appendChild(item)
+    const item = crearProducto(numero, nombre)  
+ 
+    tabla.appendChild(item)
 
     limpiarFormulario()
     actualizarContador()
 }
 
-function crearProducto(nombre, numero) {
+function crearProducto(numero, nombre) {
     // createElement(), crea elemento html
-    const item = document.createElement("li")
-    item.textContent = `${numero} x ${nombre}`
+    const item = document.createElement("tr")
+
+    const dataCantidad = document.createElement("td")
+    dataCantidad.textContent = numero
+
+    const dataProducto = document.createElement("td")
+    dataProducto.textContent = nombre
+
+    // appendChild(), agrega elemento creado a otro html
+    item.appendChild(dataCantidad)
+    item.appendChild(dataProducto)
 
     item.addEventListener("click", () => {
         comprado(item)    
@@ -59,10 +67,11 @@ function comprado(item) {
 function limpiarFormulario() {
     producto.value = ""
     cantidad.value = 1
+    producto.focus()
 }
 
 function actualizarContador() {
-    const numero = lista.children.length
+    const numero = tabla.children.length
 
     // ternario
     contador.textContent = numero === 0 
@@ -70,7 +79,7 @@ function actualizarContador() {
         : `Cantidad de productos: ${numero}` 
 }
 
-vaciar.addEventListener("click", () => {
+eliminar.addEventListener("click", () => {
     const comprados = document.querySelectorAll(".comprado")
 
     comprados.forEach(item => {

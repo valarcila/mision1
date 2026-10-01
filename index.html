@@ -12,7 +12,7 @@
 
     <body>
         <header>
-            <h1>LISTA DE LA COMPRA</h1>
+            <h1>TABLA DE LA COMPRA</h1>
         </header>
 
         <main>
@@ -20,13 +20,6 @@
                 <h2>Agregar</h2>
                 <form id="formulario" autocomplete="off">
                     <!--for, relaciona label con input-->
-                    <label for="producto">Producto</label>
-                    <!--placeholder, muestra ejemplo dentro del input-->
-                    <input 
-                        id="producto" 
-                        type="text"
-                        placeholder="Plátanos de Canarias"
-                    >
                     <label for="cantidad">Cantidad</label>
                     <input
                         id="cantidad"
@@ -34,6 +27,13 @@
                         min="1"
                         value="1"
                         required
+                    >
+                    <label for="producto">Producto</label>
+                    <!--placeholder, muestra ejemplo dentro del input-->
+                    <input 
+                        id="producto" 
+                        type="text"
+                        placeholder="Plátanos de Canarias"
                     >
                     <!--submit, envia el formulario-->
                     <button type="submit">Agregar</button>
@@ -43,9 +43,17 @@
 
             <section>
                 <h2>Productos</h2>
-                <ul id="lista"></ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Producto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla"></tbody>
+                </table>
                 <p id="contador">Sin productos</p>
-                <button id="vaciar" type="button">Vaciar</button>
+                <button id="eliminar" type="button">Eliminar comprados</button>
             </section>
         </main>
 

@@ -1,15 +1,15 @@
 /*libreria de colores*/
 :root {
-    --white: #f6f0e6;
-    --brown: #d4b896;
-    --pastel_blue: #8fb3c8;
-    --blue: #0b3c5d;
+    --white: #f5efe6;
+    --red: #c0392b;
+    --pastel_blue: #a7c5eb;
+    --blue: #1b2a41;
 }
 
 /*modo oscuro, invierte los colores*/
 body.oscuro {
-    --white: #0b3c5d;
-    --blue: #f6f0e6;
+    --white: #1b2a41;
+    --blue: #f5efe6;
 }
 
 body {
@@ -33,6 +33,10 @@ main {
     text-align: center;
 }
 
+h2 {
+    margin: 10px;
+}
+
 #formulario {
     margin: 30px;
     justify-content: center;
@@ -43,10 +47,10 @@ main {
     flex-wrap: wrap;
 }
 
-#producto, #cantidad {
+#cantidad, #producto {
     background-color: var(--white);
     color: var(--blue);
-    padding: 5px;
+    padding: 10px 20px;
     border: 2px solid var(--pastel_blue);
     border-radius: 10px;
     text-align: center;
@@ -58,7 +62,7 @@ main {
 }
 
 /*:, pseudoclases*/
-#producto:focus, #cantidad:focus {
+#cantidad:focus, #producto:focus {
     outline: none;
     border-color: var(--blue);
 }
@@ -66,11 +70,10 @@ main {
 button {
     background-color: var(--blue);
     color: var(--white);
-    padding: 10px;
-    border: none;
+    padding: 10px 20px;
+    border: 2px solid var(--blue);
     border-radius: 10px;
     text-align: center;
-   
 }
 
 button:hover {
@@ -79,15 +82,30 @@ button:hover {
 }
 
 #error {
-
+    color: var(--red);
 }
 
-#lista {
-    list-style: none;
-    padding: 0px;
+table {
+    margin: 30px auto;
+    border-spacing: 20px 5px;
 }
 
-/*funcion comprado*/
-.comprado {
+th, td {
+    padding: 10px 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--pastel_blue);
+    color: var(--blue);
+}
+
+#contador, #eliminar {
+    margin: 10px;
+}
+
+/*comprado, tacha producto*/
+.comprado td {
     text-decoration: line-through;
 }
