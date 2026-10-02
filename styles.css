@@ -47,7 +47,7 @@ h2 {
     flex-wrap: wrap;
 }
 
-#cantidad, #producto {
+input {
     background-color: var(--white);
     color: var(--blue);
     padding: 10px 20px;
@@ -56,15 +56,15 @@ h2 {
     text-align: center;
 }
 
+/*:, pseudoclases*/
+input:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
 /*::, pseudoelementos*/
 #producto::placeholder {
     color: var(--pastel_blue);
-}
-
-/*:, pseudoclases*/
-#cantidad:focus, #producto:focus {
-    outline: none;
-    border-color: var(--blue);
 }
 
 button {

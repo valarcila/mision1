@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
     <head>
         <meta charset="utf-8"/>
@@ -9,12 +8,10 @@
         <!--defer, ejecuta tras parsear html-->
         <script src="app.js" defer></script>
     </head>
-
     <body>
         <header>
             <h1>TABLA DE LA COMPRA</h1>
         </header>
-
         <main>
             <section>
                 <h2>Agregar</h2>
@@ -23,10 +20,7 @@
                     <label for="cantidad">Cantidad</label>
                     <input
                         id="cantidad"
-                        type="number"
-                        min="1"
                         value="1"
-                        required
                     >
                     <label for="producto">Producto</label>
                     <!--placeholder, muestra ejemplo dentro del input-->
@@ -40,7 +34,6 @@
                 </form>
                 <p id="error" role="alert"></p>
             </section>
-
             <section>
                 <h2>Productos</h2>
                 <table>
@@ -56,7 +49,6 @@
                 <button id="eliminar" type="button">Eliminar comprados</button>
             </section>
         </main>
-
         <footer>
             <p>
                 <b>Programación web I, cliente</b>
