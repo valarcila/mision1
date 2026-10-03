@@ -62,8 +62,8 @@ function validarNombre(nombre) {
 
 function buscarProducto(nombre) {
     for(const item of tabla.children) {
-        // children[1], nombre
-        const nombreItem = item.children[1].textContent
+        // busca celda por clase
+        const nombreItem = item.querySelector(".columnaProducto").textContent
 
         if(nombre === nombreItem) {
             return item
@@ -73,9 +73,10 @@ function buscarProducto(nombre) {
 }
 
 function sumarCantidad(item, numero) {
-    // children[0], cantidad
-    const actual = Number(item.children[0].textContent)
-    item.children[0].textContent = actual + numero
+    // guarda referencia al td para poder modificar su contenido
+    const columnaCantidad = item.querySelector(".columnaCantidad")
+    const actual = Number(columnaCantidad.textContent)
+    columnaCantidad.textContent = actual + numero
 }
 
 function crearProducto(numero, nombre) {
@@ -83,9 +84,11 @@ function crearProducto(numero, nombre) {
     const item = document.createElement("tr")
 
     const dataCantidad = document.createElement("td")
+    dataCantidad.classList.add("columnaCantidad")
     dataCantidad.textContent = numero
 
     const dataProducto = document.createElement("td")
+    dataProducto.classList.add("columnaProducto")
     dataProducto.textContent = nombre
 
     // appendChild(), agrega elemento creado a otro html
